@@ -7,4 +7,4 @@ before_install:
   - docker build -t client_app -f Dockerfile.dev .
 
 script:
-  - docker run client_app npm run test -- --coverage
+  - docker run -e CI=true -it client_app npm run test
